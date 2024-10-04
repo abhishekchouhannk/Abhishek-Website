@@ -30,19 +30,21 @@ const Stairs = () => {
   */}
 
       {[...Array(6)].map((_, index) => {
-        <motion.div
-          key={index}
-          variants={stairAnimation}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          transition={{
-            duration: 0.4,
-            ease: "easeInOut",
-            delay: revereseIndex(index) * 0.1,
-          }}
-          className="h-full w-full bg-white relative"
-        />;
+        return (
+          <motion.div
+            key={index}
+            variants={stairAnimation}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              duration: 0.4,
+              ease: "easeInOut",
+              delay: revereseIndex(index) * 0.1,
+            }}
+            className="h-full w-full bg-white relative"
+          />
+        );
       })}
     </>
   );
