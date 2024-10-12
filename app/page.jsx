@@ -13,7 +13,7 @@ const Home = () => {
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
-            <h1 className="h1">
+            <h1 className="h1 mb-6">
               Hello I'm <br />{" "}
               <span className="text-accent">Abhishek Chouhan</span>
             </h1>
