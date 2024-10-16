@@ -17,7 +17,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
   /* about section */
 }
 const about = {
-  title: "About me",
+  title: "About Me",
   description:
     "I am a tenacious and hard working developer who is not afraid to take on challenges. With 2 years of experience, I have been constantly learning and bettering myself at coding with each project. Here is my resume for you to see all the details.",
   info: [
@@ -57,7 +57,7 @@ const about = {
 }
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  title: "My Experience",
   description: "Lorem Ipsum Dolor Sit Amet",
   items: [
     {
@@ -83,7 +83,7 @@ const experience = {
 }
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
+  title: "My Education",
   description: "Lorem Ipsum Dolor Sit Amet",
   items: [
     {
@@ -103,7 +103,7 @@ const education = {
   /* Skills */
 }
 const skills = {
-  title: "My skills",
+  title: "My Skills",
   description: "Lorem Ipsum Dolor Sit Amet",
   skillList: [
     {
@@ -118,6 +118,7 @@ const skills = {
       icon: <FaJs />,
       name: "Javascript",
     },
+    { icon: <i className="devicon-typescript-plain"></i>, name: "TypeScript" },
     {
       icon: <FaReact />,
       name: "ReactJS",
@@ -135,6 +136,10 @@ const skills = {
       name: "Node.js",
     },
     {
+      icon: <FaFigma />,
+      name: "Figma",
+    },
+    {
       icon: <FaPython />,
       name: "Python",
     },
@@ -142,10 +147,22 @@ const skills = {
       icon: <FaJava />,
       name: "Java",
     },
-    {
-      icon: <FaFigma />,
-      name: "Figma",
-    },
+    { icon: <i className="devicon-c-plain"></i>, name: "C" },
+    { icon: <i className="devicon-cplusplus-plain"></i>, name: "C++" },
+    { icon: <i className="devicon-kotlin-plain"></i>, name: "Kotlin" },
+    { icon: <i className="devicon-express-original"></i>, name: "Express" },
+    { icon: <i className="devicon-bootstrap-plain"></i>, name: "Bootstrap" },
+    { icon: <i className="devicon-mysql-plain"></i>, name: "MySQL" },
+    { icon: <i className="devicon-postgresql-plain"></i>, name: "PostgreSQL" },
+    { icon: <i className="devicon-firebase-plain"></i>, name: "Firebase" },
+    { icon: <i className="devicon-mongodb-plain"></i>, name: "MongoDB" },
+    { icon: <i className="devicon-django-plain"></i>, name: "Django" },
+    { icon: <i className="devicon-git-plain"></i>, name: "Git" },
+    { icon: <i className="devicon-github-plain"></i>, name: "GitHub"},
+
+    { icon: <i className="devicon-rust-plain"></i>, name: "Rust" },
+    { icon: <i className="devicon-elixir-plain"></i>, name: "Elixir" },
+    { icon: <i className="devicon-ocaml-plain"></i>, name: "OCaml"}
   ],
 };
 
@@ -160,6 +177,7 @@ import {
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { Scroll } from "lucide-react";
 
 const Resume = () => {
   return (
@@ -172,7 +190,10 @@ const Resume = () => {
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
-        <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px]">
+        <Tabs
+          defaultValue="experience"
+          className="flex flex-col xl:flex-row gap-[60px]"
+        >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:max-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
@@ -180,17 +201,94 @@ const Resume = () => {
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
 
-          { /* content */}
+          {/* content */}
           <div className="min-h-[70vh] w-full">
-            { /* experience */}
+            {/* experience content */}
             <TabsContent value="experience" className="w-full">
-              experience
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {experience.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {experience.items.map((item, index) => {
+                      return <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
+                        <div className="flex items-center gap-3">
+                          { /* dot */}
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.company}</p>
+                        </div>
+                      </li>
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+            
+            { /** Education content */}
+            <TabsContent value="education" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {education.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                      return <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <span className="text-accent">{item.institution}</span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
+                        <div className="flex items-center gap-3">
+                          { /* dot */}
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.duration}</p>
+                        </div>
+                      </li>
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
 
+            { /** Skills content */}
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{skills.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+              </div>
+              <ScrollArea className="h-[400px] mt-8">
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                {skills.skillList.map((skill, index) => {
+                  return <li key={index}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                          <div className="text-6xl group-hover:text-accent transition-all duration-200">{skill.icon}</div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="capitalize">{skill.name}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </li>
+                })}
+              </ul>
+              </ScrollArea>
+            </TabsContent>
+            <TabsContent value="about" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+              </div>
+            </TabsContent>
           </div>
         </Tabs>
       </div>
-
     </motion.div>
   );
 };
