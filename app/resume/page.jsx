@@ -18,8 +18,8 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 }
 const about = {
   title: "About Me",
-  description:
-    "I am a tenacious and hard working developer who is not afraid to take on challenges. With 2 years of experience, I have been constantly learning and bettering myself at coding with each project. Here is my resume for you to see all the details.",
+  desktopDescription: "I am a tenacious and hard working developer who is not afraid to take on challenges. With 2 years of experience, I have been constantly learning and bettering myself at coding with each project. Click through the sections on the left to see all the details. 👈",
+  mobileDescription: "I am a tenacious and hard working developer who is not afraid to take on challenges. With 2 years of experience, I have been constantly learning and bettering myself at coding with each project. Click through the sections above to view all the details. ☝️",
   info: [
     {
       fieldName: "Name",
@@ -31,7 +31,7 @@ const about = {
     },
     {
       fieldName: "Experience",
-      fieldValue: "2+",
+      fieldValue: "2+ Years",
     },
     {
       fieldName: "Email",
@@ -47,7 +47,7 @@ const about = {
     },
     {
       fieldName: "Languages Spoken",
-      fieldValue: "English, Hindi, Punjabi, French (really basic ;)",
+      fieldValue: `English, Hindi, Punjabi, French- learning :)`,
     },
   ],
 };
@@ -308,9 +308,11 @@ const Resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                {/* <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
-                </p>
+                </p> */}
+                <p className="block xl:hidden max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.mobileDescription}</p>
+                <p className="hidden xl:block max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.desktopDescription}</p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
@@ -331,3 +333,4 @@ const Resume = () => {
 };
 
 export default Resume;
+
