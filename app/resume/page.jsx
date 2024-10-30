@@ -66,7 +66,7 @@ const experience = {
       duration: "Sep 2023 - Dec 2023",
     },
     {
-      company: "Data Annotation",
+      company: "Data Annotation Tech.",
       position: "Data Annotator/Coder",
       duration: "Feb 2024 - Present",
     },
