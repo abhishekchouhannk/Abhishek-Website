@@ -58,7 +58,7 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
-  description: "Lorem Ipsum Dolor Sit Amet",
+  description: "Coding solutions, enhancing products, and learning along the way. Each role has added a new chapter to my tech journey!",
   items: [
     {
       company: "Intelligent Project Solutions Ltd.",
@@ -67,12 +67,12 @@ const experience = {
     },
     {
       company: "Data Annotation",
-      position: "Contracted Coder/Data Annotator",
+      position: "Data Annotator/Coder",
       duration: "Feb 2024 - Present",
     },
     {
       company: "PlaceSpeak Inc.",
-      position: "Cirriculum Web Developer",
+      position: "Web Developer",
       duration: "May 2024 - June 2024",
     },
   ],
@@ -84,7 +84,7 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
-  description: "Lorem Ipsum Dolor Sit Amet",
+  description: "A journey from the basics to the byte-code! From high school days to mastering tech at BCIT, here’s where I picked up my skills.",
   items: [
     {
       institution: "British Columbia Institute of Technology",
@@ -104,7 +104,7 @@ const education = {
 }
 const skills = {
   title: "My Skills",
-  description: "Lorem Ipsum Dolor Sit Amet",
+  description: "Here’s a collection of my coding superpowers, ready to tackle any tech challenge! From HTML to Rust, I’ve got the essentials covered, and maybe a few just for fun.",
   skillList: [
     {
       icon: <FaHtml5 />,
