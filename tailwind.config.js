@@ -21,7 +21,15 @@ module.exports = {
 		primary: "var(--font-jetbrainsMono)",
 	},
   	extend: {
-  		colors: {
+  		// colors: {
+  		// 	primary: '#1c1c22',
+			// accent: {
+			// 	DEFAULT: '#00ff99',
+			// 	hover: '#00e187',
+			// },
+			
+			// experimental colors below
+			colors: {
   			primary: '#1c1c22',
 			accent: {
 				DEFAULT: '#00ff99',

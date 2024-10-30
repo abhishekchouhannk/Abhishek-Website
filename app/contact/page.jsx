@@ -45,6 +45,28 @@ const Contact = () => {
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent"> Let's work together</h3>
               <p className="text-white/60">Lorem Ipsum Dolor Sit Amet</p>
+              { /** input */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Input type="firstname" placeholder="Firstname" />
+                <Input type="lastname" placeholder="Lastname" />
+                <Input type="email" placeholder="Email Address" />
+                <Input type="phone" placeholder="Phone Number" />
+              </div>
+              { /** select */}
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a service" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Select a service</SelectLabel>
+                    <SelectItem value="est">Web Development</SelectItem>
+                    <SelectItem value="cst">UI/UX Design</SelectItem>
+                    <SelectItem value="mst">Software Development</SelectItem>
+                    <SelectItem value="pst">Search Engine Optimization</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </form>
           </div>
           { /** info */}
