@@ -185,7 +185,7 @@ const Projects = () => {
                           src={project.image}
                           fill
                           className="object-cover"
-                          alt="project image here"
+                          alt="Project Images here - Coming soon :)"
                         />
                       </div>
                     </div>
