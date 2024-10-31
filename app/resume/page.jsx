@@ -17,7 +17,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
   /* about section */
 }
 const about = {
-  title: "About Me",
+  title: "My Self",
   desktopDescription: "I am a tenacious and hard working developer who is not afraid to take on challenges. With 2 years of experience, I have been constantly learning and bettering myself at coding with each project. Click through the sections on the left to see all the details. 👈",
   mobileDescription: "I am a tenacious and hard working developer who is not afraid to take on challenges. With 2 years of experience, I have been constantly learning and bettering myself at coding with each project. Click through the sections above to view all the details. ☝️",
   info: [

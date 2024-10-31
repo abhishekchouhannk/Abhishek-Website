@@ -23,25 +23,27 @@ import {
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
-    description: "Lorem Ipsum Dolor Sit Amet",
+    category: "Fullstack",
+    title: "Project Progress Tracking Tool",
+    description: "Developed a custom web app for Intelligent Project Solutions Ltd. to streamline project tracking by replacing Excel-based methods. This tool provides employees with an efficient way to monitor progress, leveraging a PostgreSQL database with a NextJS/React frontend.",
     stack: [
-      { name: "Html 5" },
-      { name: "Css 3" },
-      { name: "Javascript" },
+      { name: "Html" },
+      { name: "TailwindCSS" },
+      { name: "Typescript" },
       { name: "React" },
       { name: "NextJS" },
+      { name: "PostgreSQL"},
+      { name: "Tremor Graphing Library"}
     ],
     image: "/assets/work/thumb1.png",
-    live: "",
+    live: "https://3800-ips-project.vercel.app/projects",
     github: "",
   },
   {
     num: "02",
-    category: "frontend",
-    title: "project 2",
-    description: "Lorem Ipsum Dolor Sit Amet",
+    category: "Frontend",
+    title: "Gamified UI Revamp for PlaceSpeak",
+    description: "Enhanced user engagement for PlaceSpeak with a complete UI revamp and gamification features. Integrated badge awarding logic within a new Django REST API, created a SQL database, and debugged backend issues to provide seamless updates for the NextJS/React frontend.",
     stack: [
       { name: "Html 5" },
       { name: "Tailwind CSS" },
@@ -50,24 +52,25 @@ const projects = [
       { name: "NextJS" },
     ],
     image: "/assets/work/thumb1.png",
-    live: "",
+    live: "https://placespeak.towaquimbayo.com/login",
     github: "",
   },
   {
     num: "03",
-    category: "AI model",
-    title: "project 3",
-    description: "Lorem Ipsum Dolor Sit Amet",
+    category: "AI-Enhanced Web App",
+    title: "ŌRA- AI ToDo List",
+    description: "Award-winning web app built during QDS-Hacks '24 at BCIT to help students manage coursework efficiently. Led the AI development by creating an API powered by OpenAI’s GPT-3.5, ensuring seamless integration of intelligent features that enhance user experience.",
     stack: [
-      { name: "Html 5" },
-      { name: "Css 3" },
-      { name: "Javascript" },
+      { name: "HTML 5" },
+      { name: "CSS 3" },
+      { name: "JavaScript" },
       { name: "React" },
       { name: "NextJS" },
+      { name: "OpenAI API" },
     ],
     image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    live: "https://qds-hacks-2024.onrender.com/",
+    github: "https://github.com/abhishekchouhannk/ORA-qds_hacks_2024",
   },
 ];
 
@@ -99,12 +102,12 @@ const Projects = () => {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 captialize">
-                {project.category} project
+                {project.title}
               </h2>
               {/** project description */}
               <p className="text-white/60">{project.description}</p>
               {/** project stack */}
-              <ul className="flex gap-4">
+              <ul className="flex gap-4 flex-wrap">
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
@@ -133,14 +136,29 @@ const Projects = () => {
                   </TooltipProvider>
                 </Link>
                 {/** github project button */}
-                <Link href={project.github}>
+                <Link href={project.github || "#"} passHref>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                      <TooltipTrigger
+                        className={`w-[70px] h-[70px] rounded-full flex justify-center items-center group ${
+                          project.github
+                            ? "bg-white/5 text-white"
+                            : "bg-gray-400 cursor-not-allowed text-gray-300"
+                        }`}
+                        disabled={!project.github}
+                      >
+                        <BsGithub
+                          className={`text-3xl ${
+                            project.github ? "group-hover:text-accent" : ""
+                          }`}
+                        />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Github Repository</p>
+                        <p>
+                          {project.github
+                            ? "Github Repository"
+                            : "No github access."}
+                        </p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
